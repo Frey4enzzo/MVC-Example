@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="test@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.2">
+    <root id="1"/>
+    <database id="2" parent="1" name="test">
+      <ObjectId>16571</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2017-07-25.13:03:14.828</IntrospectionTimestamp>
+      <IntrospectionStateNumber>620</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="4" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="5" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="6" parent="2" name="pg_temp_1">
+      <ObjectId>11848</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11849</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="information_schema">
+      <ObjectId>12113</ObjectId>
+    </schema>
+    <schema id="9" parent="2" name="juniortest">
+      <ObjectId>16633</ObjectId>
+    </schema>
+    <sequence id="10" parent="3" name="department_id_seq">
+      <ObjectId>16617</ObjectId>
+      <StateNumber>616</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <sequence id="11" parent="3" name="employee_id_seq">
+      <ObjectId>16625</ObjectId>
+      <StateNumber>620</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <BelongsToColumn>1</BelongsToColumn>
+    </sequence>
+    <table id="12" parent="3" name="department">
+      <ObjectId>16619</ObjectId>
+      <StateNumber>616</StateNumber>
+    </table>
+    <table id="13" parent="3" name="employee">
+      <ObjectId>16627</ObjectId>
+      <StateNumber>620</StateNumber>
+    </table>
+    <column id="14" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>616</StateNumber>
+      <SequenceName>department_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;department_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="15" parent="12" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>616</StateNumber>
+    </column>
+    <index id="16" parent="12" name="department_pkey">
+      <ObjectId>16623</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="17" parent="12" name="department_pkey">
+      <ObjectId>16624</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>department_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="18" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>620</StateNumber>
+      <SequenceName>employee_id_seq</SequenceName>
+      <DefaultExpression>nextval(&apos;employee_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="19" parent="13" name="firstname">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <StateNumber>620</StateNumber>
+    </column>
+    <column id="20" parent="13" name="lastname">
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <StateNumber>620</StateNumber>
+    </column>
+    <column id="21" parent="13" name="position">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <StateNumber>620</StateNumber>
+    </column>
+    <column id="22" parent="13" name="department_id">
+      <Position>5</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>620</StateNumber>
+    </column>
+    <index id="23" parent="13" name="employee_pkey">
+      <ObjectId>16631</ObjectId>
+      <ColNames>id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="24" parent="13" name="employee_pkey">
+      <ObjectId>16632</ObjectId>
+      <ColNames>id</ColNames>
+      <UnderlyingIndexName>employee_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
