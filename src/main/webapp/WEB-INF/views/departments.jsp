@@ -7,8 +7,8 @@
     <title>Title</title>
 </head>
 <body>
-<a href="/">Домой</a></br>
-Departments Page
+<a href="/">HOME</a></br>
+
 <h3>Departments List</h3>
 <c:if test="${!empty listDepartments}">
     <table class="tg">

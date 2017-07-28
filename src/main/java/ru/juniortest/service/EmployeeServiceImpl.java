@@ -3,6 +3,7 @@ package ru.juniortest.service;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.juniortest.dao.EmployeeDao;
+import ru.juniortest.model.Department;
 import ru.juniortest.model.Employee;
 import java.util.List;
 
@@ -39,4 +40,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     public List<Employee> listEmployees() {
         return this.employeeDao.listEmployees();
     }
+
+    @Transactional
+    public List<Employee> findEmployeeByFirstOrLastname(String searchText) {
+        return this.employeeDao.findEmployeeByFirstOrLastname(searchText);
+    }
+
 }

@@ -24,13 +24,13 @@ public class DepartmentDaoImpl implements DepartmentDao{
     public void addDepartment(Department department) {
         Session session = this.sessionFactory.getCurrentSession();
         session.persist(department);
-        logger.info("Department add successfully. Department details: " + department);
+        logger.debug("Prepare department to add successfully. Department details: " + department);
     }
 
     public void updateDepartment(Department department) {
         Session session = this.sessionFactory.getCurrentSession();
         session.update(department);
-        logger.info("Department update successfully. Department details: " + department);
+        logger.debug("Prepare department to update successfully. Department details: " + department);
     }
 
     public void removeDepartment(int id) {
@@ -38,14 +38,14 @@ public class DepartmentDaoImpl implements DepartmentDao{
         Department department = (Department) session.load(Department.class, new Integer(id));
         if (null != department) {
             session.delete(department);
+            logger.info("Prepare department to delete successfully. Department details: " + department);
         }
-        logger.info("Department deleted successfully. Department details: " + department);
     }
 
     public Department getDepartmentById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
         Department department = (Department) session.load(Department.class, new Integer(id));
-        logger.info("Department loaded successfully. Department details: " + department);
+        logger.debug("Department loaded successfully. Department details: " + department);
         return department;
     }
 
@@ -54,7 +54,7 @@ public class DepartmentDaoImpl implements DepartmentDao{
         Session session = this.sessionFactory.getCurrentSession();
         List<Department> departmentList = session.createQuery("from Department ").list();
         for (Department department : departmentList) {
-            logger.info("Department List::" + department);
+            logger.debug("Department List::" + department);
         }
         return departmentList;
     }

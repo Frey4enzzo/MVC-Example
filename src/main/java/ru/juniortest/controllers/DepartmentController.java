@@ -34,6 +34,8 @@ public class DepartmentController {
     public String listDepartments(Model model) {
         model.addAttribute("department", new Department());
         model.addAttribute("listDepartments", this.departmentService.listDepartments());
+        logger.debug("List departments load successfully");
+
         return "departments";
     }
 
@@ -41,8 +43,10 @@ public class DepartmentController {
     public String addDepartment(@ModelAttribute("department") Department department) {
         if (department.getId() == 0) {
             departmentService.addDepartment(department);
+            logger.info("Department added successfully. Department: " + department);
         } else {
             departmentService.updateDepartment(department);
+            logger.info("Department update successfully. Department: " + department);
         }
 
         return "redirect:/departments";
@@ -51,6 +55,7 @@ public class DepartmentController {
     @RequestMapping("/departments/remove/{id}")
     public String removeDepartment(@PathVariable("id") int id) {
         this.departmentService.removeDepartment(id);
+        logger.info("Department removed successfully");
 
         return "redirect:/departments";
     }

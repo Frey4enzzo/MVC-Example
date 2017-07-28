@@ -1,6 +1,6 @@
 package ru.juniortest.dao;
 
-
+import ru.juniortest.model.Department;
 import ru.juniortest.model.Employee;
 import java.util.List;
 
@@ -15,5 +15,7 @@ public interface EmployeeDao {
     public Employee getEmployeeById(int id);
 
     public List<Employee> listEmployees();
+
+    public List<Employee> findEmployeeByFirstOrLastname(String searchText);
 
 }

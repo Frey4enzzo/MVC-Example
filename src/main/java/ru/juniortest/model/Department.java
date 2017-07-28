@@ -2,7 +2,9 @@ package ru.juniortest.model;
 
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -18,7 +20,7 @@ public class Department {
     private String name;
 
     @OneToMany(mappedBy = "department")
-    private Set<Employee> employees = new HashSet<Employee>();
+    private List<Employee> employees = new ArrayList<Employee>();
 
     public Department(){}
 
@@ -42,11 +44,11 @@ public class Department {
         this.name = name;
     }
 
-    public Set<Employee> getEmployees() {
+    public List<Employee> getEmployees() {
         return employees;
     }
 
-    public void setEmployees(Set<Employee> employees) {
+    public void setEmployees(List<Employee> employees) {
         this.employees = employees;
     }
 

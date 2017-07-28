@@ -21,7 +21,7 @@ public class Employee implements Serializable{
     @Column(name = "position")
     private String position;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "department_id")
     private Department department;
 
@@ -31,6 +31,13 @@ public class Employee implements Serializable{
         this.firstname = firstname;
         this.lastname = lastname;
         this.position = position;
+    }
+
+    public Employee(String firstname, String lastname, String position, Department department) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.position = position;
+        this.department = department;
     }
 
     public int getId() {
